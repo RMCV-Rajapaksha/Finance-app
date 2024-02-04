@@ -1,0 +1,283 @@
+import 'dart:html';
+
+import 'package:flutter/material.dart';
+
+class Wallet extends StatefulWidget {
+  const Wallet({Key? key}) : super(key: key);
+
+  @override
+  State<Wallet> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<Wallet> {
+  @override
+  Widget build(BuildContext context) {
+    double myHeight = MediaQuery.of(context).size.height;
+    double myWidth = MediaQuery.of(context).size.width;
+    return SafeArea(
+        child: Scaffold(
+      backgroundColor: Colors.grey.shade100,
+      body: Container(
+          height: myHeight,
+          width: myWidth,
+          child: Column(
+            children: [
+              Padding(
+                padding:
+                    EdgeInsets.only(top: myHeight * 0.04, left: myWidth * 0.08),
+                child: Row(
+                  children: [
+                    Text(
+                      'Hi, Chamara Vishwajith',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(0, 1, 51, 1.000),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    EdgeInsets.only(top: myHeight * 0.01, left: myWidth * 0.08),
+                child: Row(
+                  children: [
+                    Text(
+                      'Manage your bank with your our app',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.grey),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: myHeight * 0.01,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: myWidth * 0.08),
+                child: Container(
+                  height: myHeight * 0.22,
+                  // width: myWidth * 0.9,
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(18, 96, 205, 1),
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: myWidth * 0.05,
+                            vertical: myHeight * 0.01),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              // height: myHeight * 0.03,
+                              // width: myWidth * 0.1,
+
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: myWidth * 0.02,
+                                  vertical: myHeight * 0.005),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: Colors.white.withOpacity(0.5)),
+                              child: Center(
+                                  child: Text(
+                                '02/26',
+                                style: TextStyle(color: Colors.white),
+                              )),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: myHeight * 0.01),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            myText('6104'),
+                            myText('3389'),
+                            myText('3256'),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: myWidth * 0.05,
+                            vertical: myHeight * 0.01),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'R.M.C.V.Rajapaksha',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal),
+                            ),
+                            Text(
+                              'VCC: 452',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: myWidth * 0.08, vertical: myHeight * 0.03),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    myItemContiner('Card balance', '100.000'),
+                    myItemContiner('Removable', '90.000'),
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    EdgeInsets.only(top: myHeight * 0.02, left: myWidth * 0.08),
+                child: Row(
+                  children: [
+                    Text(
+                      'History',
+                      style: TextStyle(
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(0, 1, 51, 1.000),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: myHeight * 0.02,
+              ),
+              Expanded(
+                  child: ListView.builder(
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(vertical: myHeight * 0.03),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: myWidth * 0.04,
+                                vertical: myHeight * 0.01),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: Colors.white),
+                            // child: Image.asset(
+                            //   //'2.png',
+                            //   height: myHeight * 0.05,
+                            //   width: myWidth * 0.02,
+                            // ),
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Withdraw Money',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: myHeight * 0.01),
+                            Text(
+                              'Yesterday',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          '\$ 100.000',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff368983),
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ))
+            ],
+          )),
+    ));
+  }
+
+  Widget myText(String txt) {
+    double myHeight = MediaQuery.of(context).size.height;
+    double myWidth = MediaQuery.of(context).size.width;
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: myWidth * 0.03),
+      child: Text(
+        txt,
+        style: TextStyle(
+            fontSize: 27, color: Colors.white, fontWeight: FontWeight.normal),
+      ),
+    );
+  }
+
+  Widget myItemContiner(String title, String price) {
+    double myHeight = MediaQuery.of(context).size.height;
+    double myWidth = MediaQuery.of(context).size.width;
+    return Container(
+      padding: EdgeInsets.only(
+          top: myHeight * 0.02,
+          left: myWidth * 0.05,
+          right: myWidth * 0.1,
+          bottom: myHeight * 0.02),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(15)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+                color: Colors.grey, fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: myHeight * 0.01,
+          ),
+          Row(
+            children: [
+              Text(
+                '\$',
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                price,
+                style: TextStyle(
+                    color: Color.fromRGBO(0, 1, 51, 1.000),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
