@@ -278,47 +278,8 @@ class Homepage extends StatelessWidget {
                       ),
                       Row(
                         children: <Widget>[
-                          Expanded(
-                            child: Container(
-                              height: 40,
-                              width: 40,
-                              margin: EdgeInsets.symmetric(horizontal: 5),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Color.fromRGBO(83, 84, 153, 1),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Google",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
                           SizedBox(
                             width: 30,
-                          ),
-                          Expanded(
-                            child: Container(
-                              height: 40,
-                              margin: EdgeInsets.symmetric(horizontal: 10),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Color.fromRGBO(83, 84, 153, 1),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Facebook",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
                           ),
                         ],
                       ),
@@ -558,47 +519,56 @@ class SignIn extends StatelessWidget {
                       SizedBox(
                         height: screenHeight * 0.04,
                       ),
-                      Container(
-                        height: screenHeight *
-                            0.08, // Increase or decrease the multiplier as needed
-                        margin: EdgeInsets.symmetric(horizontal: 50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: Center(
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Color.fromRGBO(0, 1, 51, 1.000),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 100,
+                            height: screenHeight *
+                                0.08, // Increase or decrease the multiplier as needed
+                            margin: EdgeInsets.symmetric(horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
                             ),
-                            child: Text(
-                              "Signup",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
+                            child: Center(
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color.fromRGBO(0, 1, 51, 1.000),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                ),
+                                child: Text(
+                                  "Signup",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
                       Container(
-                        height: 50,
-                        width: 50,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Color.fromRGBO(0, 1, 51,
-                                1.000), // Set your desired button color
-                          ),
-                          child: Icon(
-                            Icons.arrow_back_outlined,
-                            color: Colors.white,
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Color.fromRGBO(0, 1, 51,
+                                    1.000), // Set your desired button color
+                              ),
+                              child: Icon(
+                                Icons.arrow_back_outlined,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

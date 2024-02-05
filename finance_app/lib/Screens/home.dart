@@ -127,8 +127,8 @@ class _HomeState extends State<Home> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   stops: [
-                    0.1,
-                    0.4,
+                    0.6,
+                    1.8,
                   ],
                   colors: [
                     Color.fromRGBO(0, 1, 51, 1.000),
