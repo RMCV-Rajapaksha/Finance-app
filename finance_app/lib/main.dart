@@ -174,7 +174,7 @@ class Homepage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: screenHeight * 0.04,
+                        height: screenHeight * 0.02,
                       ),
                       Center(
                         child: ElevatedButton(
@@ -200,7 +200,7 @@ class Homepage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: screenHeight * 0.02,
+                        height: screenHeight * 0.0001,
                       ),
                       Container(
                         height: 100, // Increase the height to your desired size
@@ -225,11 +225,20 @@ class Homepage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(50),
                               ),
                             ),
-                            child: Text(
-                              "Login",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
+                            child: Container(
+                              height: 50,
+                              width: 90,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Login",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -246,30 +255,37 @@ class Homepage extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             primary: Color.fromRGBO(0, 1, 51, 1.000),
                           ),
-                          child: Text(
-                            "Singup",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                          child: Container(
+                            height: 50,
+                            width: 90,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Singup",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
                       ),
                       SizedBox(
-                        height: screenHeight * 0.01,
-                      ),
-                      SizedBox(
-                        height: screenHeight * 0.03,
+                        height: screenHeight * 0.02,
                       ),
                       Row(
                         children: <Widget>[
                           Expanded(
                             child: Container(
-                              height: 50,
-                              margin: EdgeInsets.symmetric(horizontal: 10),
+                              height: 40,
+                              width: 40,
+                              margin: EdgeInsets.symmetric(horizontal: 5),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
-                                color: Color.fromRGBO(0, 1, 51, 1.000),
+                                color: Color.fromRGBO(83, 84, 153, 1),
                               ),
                               child: Center(
                                 child: Text(
@@ -287,11 +303,11 @@ class Homepage extends StatelessWidget {
                           ),
                           Expanded(
                             child: Container(
-                              height: 50,
+                              height: 40,
                               margin: EdgeInsets.symmetric(horizontal: 10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
-                                color: Color.fromRGBO(0, 1, 51, 1.000),
+                                color: Color.fromRGBO(83, 84, 153, 1),
                               ),
                               child: Center(
                                 child: Text(
@@ -565,6 +581,23 @@ class SignIn extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: 50,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Color.fromRGBO(0, 1, 51,
+                                1.000), // Set your desired button color
+                          ),
+                          child: Icon(
+                            Icons.arrow_back_outlined,
+                            color: Colors.white,
                           ),
                         ),
                       ),

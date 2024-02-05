@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class Wallet extends StatefulWidget {
@@ -179,7 +177,7 @@ class _HomePageState extends State<Wallet> {
                                 vertical: myHeight * 0.01),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(25),
-                                color: Colors.white),
+                                color: const Color.fromARGB(255, 81, 44, 44)),
                             // child: Image.asset(
                             //   //'2.png',
                             //   height: myHeight * 0.05,
