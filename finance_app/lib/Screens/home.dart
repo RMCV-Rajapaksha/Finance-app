@@ -4,6 +4,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:finance_app/data/listdata.dart';
 import 'package:finance_app/data/model/add_date.dart';
 import 'package:finance_app/data/utlity.dart';
+import 'package:device_preview/device_preview.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

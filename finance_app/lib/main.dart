@@ -5,12 +5,24 @@ import 'package:finance_app/widgets/bottomnavigationbar.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'data/model/add_date.dart';
+import 'package:device_preview/device_preview.dart';
 
+// void main() async {
+//   await Hive.initFlutter();
+//   Hive.registerAdapter(AdddataAdapter());
+//   await Hive.openBox<Add_data>('data');
+//   runApp(const MyApp());
+// }
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(AdddataAdapter());
   await Hive.openBox<Add_data>('data');
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
