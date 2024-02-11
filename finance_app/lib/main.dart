@@ -177,7 +177,7 @@ class Homepage extends StatelessWidget {
                         height: screenHeight * 0.02,
                       ),
                       Center(
-                        child: ElevatedButton(
+                        child: TextButton(
                           onPressed: () {
                             showCustomBottomSheet(context);
                           },
