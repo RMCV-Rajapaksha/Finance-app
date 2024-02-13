@@ -59,6 +59,7 @@ class Homepage extends StatelessWidget {
             end: Alignment.topRight,
           ),
         ),
+        height: screenHeight,
         child: Column(
           children: <Widget>[
             SizedBox(
@@ -136,8 +137,7 @@ class Homepage extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(10),
                                       borderSide: BorderSide(
                                           width: 2,
-                                          color:
-                                              Color.fromRGBO(18, 96, 205, 1))),
+                                          color: Color.fromRGBO(4, 22, 48, 1))),
                                 ),
                                 // controller: username,
                                 // decoration: InputDecoration(
@@ -151,6 +151,7 @@ class Homepage extends StatelessWidget {
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(),
                               child: TextField(
+                                obscureText: true,
                                 keyboardType: TextInputType.text,
                                 controller: password,
 
@@ -169,8 +170,7 @@ class Homepage extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(10),
                                       borderSide: BorderSide(
                                           width: 2,
-                                          color:
-                                              Color.fromRGBO(18, 96, 205, 1))),
+                                          color: Color.fromRGBO(4, 28, 62, 1))),
                                 ),
                                 // controller: password,
                                 // decoration: InputDecoration(
@@ -286,12 +286,44 @@ class Homepage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: screenHeight * 0.02,
+                        height: screenHeight * 0.04,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          SizedBox(
-                            width: 30,
+                          Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundColor:
+                                      Color.fromRGBO(0, 1, 51, 1.000),
+                                  child: Icon(Icons.facebook,
+                                      size: 30, color: Colors.white),
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundColor:
+                                      Color.fromRGBO(0, 1, 51, 1.000),
+                                  child: Icon(Icons.mail,
+                                      size: 30, color: Colors.white),
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundColor:
+                                      Color.fromRGBO(0, 1, 51, 1.000),
+                                  child: Icon(Icons.security_outlined,
+                                      size: 30, color: Colors.white),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
