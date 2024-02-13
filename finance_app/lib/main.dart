@@ -569,7 +569,10 @@ class SignIn extends StatelessWidget {
                           children: [
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.pop(context);
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MyApp()));
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: Color.fromRGBO(0, 1, 51,
