@@ -62,92 +62,109 @@ class Profile extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Container(
-              height: 50,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Landphone Number',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 4, 50, 47),
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        '055-2224101',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 4, 50, 47),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Mobile Number',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 4, 50, 47),
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        '077-9121861',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 4, 50, 47),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 10),
-          Container(
-            height: 300,
-            width: 320,
-            child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'About',
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 4, 50, 47),
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          'I am an undergraduate student at the University of Ruhuna, majoring in Computer Engineering. The program at the Department of Computer Engineering provides me with a solid foundation in both theoretical concepts and practical applications. Eager to explore the dynamic world of technology, I am enthusiastic about learning and applying innovative solutions in the field.',
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 4, 50, 47),
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Column(
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.person,
+                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
+                    SizedBox(
+                      width: 30,
                     ),
-                  ),
-                ],
-              ),
+                    Text('R.M.C.V',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(0, 1, 51, 1.000),
+                        )),
+                  ],
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.email,
+                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Text('google@gmail.com',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(0, 1, 51, 1.000),
+                        )),
+                  ],
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.call,
+                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Text('055-2228103',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(0, 1, 51, 1.000),
+                        )),
+                  ],
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.lock_clock,
+                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Text('18-05-2024',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(0, 1, 51, 1.000),
+                        )),
+                  ],
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.sensor_occupied_sharp,
+                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Text('Student',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(0, 1, 51, 1.000),
+                        )),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Column(),
+                  ],
+                ),
+              ],
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(
+            height: 30,
+          ),
+          SizedBox(height: 60),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
