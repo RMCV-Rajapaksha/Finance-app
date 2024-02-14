@@ -7,12 +7,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'data/model/add_date.dart';
 import 'package:device_preview/device_preview.dart';
 
-// void main() async {
-//   await Hive.initFlutter();
-//   Hive.registerAdapter(AdddataAdapter());
-//   await Hive.openBox<Add_data>('data');
-//   runApp(const MyApp());
-// }
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(AdddataAdapter());
@@ -121,7 +115,6 @@ class Homepage extends StatelessWidget {
                               child: TextField(
                                 keyboardType: TextInputType.number,
                                 controller: username,
-
                                 decoration: InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(
                                       horizontal: 15, vertical: 15),
@@ -139,12 +132,6 @@ class Homepage extends StatelessWidget {
                                           width: 2,
                                           color: Color.fromRGBO(4, 22, 48, 1))),
                                 ),
-                                // controller: username,
-                                // decoration: InputDecoration(
-                                //   hintText: "Email or Phone Number",
-                                //   hintStyle: TextStyle(color: Colors.grey),
-                                //   border: InputBorder.none,
-                                // ),
                               ),
                             ),
                             Container(
@@ -154,7 +141,6 @@ class Homepage extends StatelessWidget {
                                 obscureText: true,
                                 keyboardType: TextInputType.text,
                                 controller: password,
-
                                 decoration: InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(
                                       horizontal: 15, vertical: 15),
@@ -172,14 +158,6 @@ class Homepage extends StatelessWidget {
                                           width: 2,
                                           color: Color.fromRGBO(4, 28, 62, 1))),
                                 ),
-                                // controller: password,
-                                // decoration: InputDecoration(
-                                //   hintText: "Password",
-                                //   hintStyle: TextStyle(
-                                //     color: Color.fromARGB(255, 15, 31, 133),
-                                //   ),
-                                //   border: InputBorder.none,
-                                // ),
                               ),
                             ),
                           ],
