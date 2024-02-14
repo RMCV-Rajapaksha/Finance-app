@@ -1,3 +1,4 @@
+import 'package:finance_app/main.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
@@ -147,7 +148,7 @@ class Profile extends StatelessWidget {
                     ),
                     Text('Student',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(0, 1, 51, 1.000),
                         )),
@@ -162,9 +163,61 @@ class Profile extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
-          SizedBox(height: 60),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromRGBO(0, 1, 51, 1.000),
+                      Color.fromRGBO(18, 96, 205, 1),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                width: 120,
+                height: 50,
+                child: TextButton(
+                  onPressed: () {
+                    MaterialPageRoute(builder: (context) => MyApp());
+                  },
+                  child: Text('Logout',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold)),
+                ),
+              ),
+              SizedBox(width: 20),
+              Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromRGBO(0, 1, 51, 1.000),
+                      Color.fromRGBO(18, 96, 205, 1),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                width: 120,
+                height: 50,
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text('Settings',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold)),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 30),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
