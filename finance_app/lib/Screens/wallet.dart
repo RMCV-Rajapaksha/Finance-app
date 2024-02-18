@@ -62,7 +62,7 @@ class _HomePageState extends State<Wallet> {
                   height: myHeight * 0.22,
                   // width: myWidth * 0.9,
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(18, 96, 205, 1),
+                      color: Color.fromRGBO(0, 1, 51, 1),
                       borderRadius: BorderRadius.circular(30)),
                   child: Column(
                     children: [

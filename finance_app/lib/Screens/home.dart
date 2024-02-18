@@ -28,54 +28,52 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: ValueListenableBuilder(
-              valueListenable: box.listenable(),
-              builder: (context, value, child) {
-                return CustomScrollView(
-                  slivers: [
-                    SliverToBoxAdapter(
-                      child: SizedBox(height: 340, child: _head()),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Transactions History',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 19,
-                                color: Colors.black,
-                              ),
+        body: ValueListenableBuilder(
+            valueListenable: box.listenable(),
+            builder: (context, value, child) {
+              return CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: SizedBox(height: 340, child: _head()),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Transactions History',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 19,
+                              color: Colors.black,
                             ),
-                            Text(
-                              'See all',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 15,
-                                color: Colors.grey,
-                              ),
+                          ),
+                          Text(
+                            'See all',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15,
+                              color: Colors.grey,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
-                    SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) {
-                          history = box.values.toList()[index];
-                          return getList(history, index);
-                        },
-                        childCount: box.length,
-                      ),
-                    )
-                  ],
-                );
-              })),
-    );
+                  ),
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        history = box.values.toList()[index];
+                        return getList(history, index);
+                      },
+                      childCount: box.length,
+                    ),
+                  )
+                ],
+              );
+            }));
   }
 
   Widget getList(Add_data history, int index) {
@@ -127,16 +125,12 @@ class _HomeState extends State<Home> {
               height: 240,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  stops: [
-                    0.6,
-                    1.8,
-                  ],
                   colors: [
                     Color.fromRGBO(0, 1, 51, 1.000),
                     Color.fromRGBO(18, 96, 205, 1),
                   ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
+                  begin: Alignment.topLeft,
+                  end: Alignment.topRight,
                 ),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
@@ -163,7 +157,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 35, left: 10),
+                    padding: const EdgeInsets.only(top: 60, left: 30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -206,7 +200,7 @@ class _HomeState extends State<Home> {
                   spreadRadius: 6,
                 ),
               ],
-              color: Color.fromRGBO(18, 96, 205, 1),
+              color: Color.fromRGBO(0, 1, 51, 1),
               borderRadius: BorderRadius.circular(15),
             ),
             child: Column(

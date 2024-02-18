@@ -43,17 +43,15 @@ class _Add_ScreenState extends State<Add_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
-      body: SafeArea(
-        child: Stack(
-          alignment: AlignmentDirectional.center,
-          children: [
-            background_container(context),
-            Positioned(
-              top: 120,
-              child: main_container(),
-            ),
-          ],
-        ),
+      body: Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+          background_container(context),
+          Positioned(
+            top: 120,
+            child: main_container(),
+          ),
+        ],
       ),
     );
   }
@@ -337,7 +335,7 @@ class _Add_ScreenState extends State<Add_Screen> {
           ),
           child: Column(
             children: [
-              SizedBox(height: 40),
+              SizedBox(height: 60),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
@@ -351,7 +349,7 @@ class _Add_ScreenState extends State<Add_Screen> {
                       child: Icon(Icons.arrow_back, color: Colors.white),
                     ),
                     Text(
-                      'ADD INCome/Expand',
+                      'ADD Income/Expenses',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
