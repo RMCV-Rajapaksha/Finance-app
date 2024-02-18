@@ -39,181 +39,217 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 30),
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromRGBO(0, 1, 51, 1.000),
-              Color.fromRGBO(18, 96, 205, 1),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.topRight,
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          padding: EdgeInsets.symmetric(vertical: 30),
+          width: double.infinity,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromRGBO(0, 1, 51, 1.000),
+                Color.fromRGBO(18, 96, 205, 1),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.topRight,
+            ),
           ),
-        ),
-        height: screenHeight,
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: screenHeight * 0.1,
-            ),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    "Login",
-                    style: TextStyle(color: Colors.white, fontSize: 40),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "Welcome Back",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                ],
+          height: screenHeight,
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: screenHeight * 0.1,
               ),
-            ),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40),
-                  ),
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Login",
+                      style: TextStyle(color: Colors.white, fontSize: 40),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Welcome Back",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ],
                 ),
-                child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: screenHeight * 0.04,
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color.fromRGBO(0, 1, 51, 1.000),
-                              blurRadius: 20,
-                              offset: Offset(0, 10),
-                            ),
-                          ],
+              ),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: screenHeight * 0.04,
                         ),
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(),
-                              child: TextField(
-                                keyboardType: TextInputType.number,
-                                controller: username,
-                                decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 15, vertical: 15),
-                                  labelText: 'Username',
-                                  labelStyle: TextStyle(
-                                      fontSize: 17,
-                                      color: Colors.grey.shade500),
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: BorderSide(
-                                          width: 2, color: Color(0xffC5C5C5))),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: BorderSide(
-                                          width: 2,
-                                          color: Color.fromRGBO(4, 22, 48, 1))),
+                        Container(
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromRGBO(0, 1, 51, 1.000),
+                                blurRadius: 20,
+                                offset: Offset(0, 10),
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(),
+                                child: TextField(
+                                  keyboardType: TextInputType.number,
+                                  controller: username,
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 15),
+                                    labelText: 'Username',
+                                    labelStyle: TextStyle(
+                                        fontSize: 17,
+                                        color: Colors.grey.shade500),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide(
+                                            width: 2,
+                                            color: Color(0xffC5C5C5))),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide(
+                                            width: 2,
+                                            color:
+                                                Color.fromRGBO(4, 22, 48, 1))),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(),
+                                child: TextField(
+                                  obscureText: true,
+                                  keyboardType: TextInputType.text,
+                                  controller: password,
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 15, vertical: 15),
+                                    labelText: 'Password',
+                                    labelStyle: TextStyle(
+                                        fontSize: 17,
+                                        color: Colors.grey.shade500),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide(
+                                            width: 2,
+                                            color: Color(0xffC5C5C5))),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide(
+                                            width: 2,
+                                            color:
+                                                Color.fromRGBO(4, 28, 62, 1))),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.02,
+                        ),
+                        Center(
+                          child: TextButton(
+                            onPressed: () {
+                              showCustomBottomSheet(context);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: const Color.fromARGB(0, 255, 255, 255),
+                              onPrimary: Color.fromRGBO(255, 255, 255, 1),
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide.none,
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              padding: EdgeInsets.all(16.0),
+                            ),
+                            child: Text(
+                              "Forget Password?",
+                              style: TextStyle(
+                                color: Color.fromRGBO(0, 1, 51, 1.000),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.0001,
+                        ),
+                        Container(
+                          height:
+                              100, // Increase the height to your desired size
+                          margin: EdgeInsets.symmetric(horizontal: 50),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Center(
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (username.text == "admin" &&
+                                    password.text == "admin") {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Bottom()));
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Color.fromRGBO(0, 1, 51, 1.000),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                              ),
+                              child: Container(
+                                height: 50,
+                                width: 90,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Login",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(),
-                              child: TextField(
-                                obscureText: true,
-                                keyboardType: TextInputType.text,
-                                controller: password,
-                                decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 15, vertical: 15),
-                                  labelText: 'Password',
-                                  labelStyle: TextStyle(
-                                      fontSize: 17,
-                                      color: Colors.grey.shade500),
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: BorderSide(
-                                          width: 2, color: Color(0xffC5C5C5))),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: BorderSide(
-                                          width: 2,
-                                          color: Color.fromRGBO(4, 28, 62, 1))),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: screenHeight * 0.02,
-                      ),
-                      Center(
-                        child: TextButton(
-                          onPressed: () {
-                            showCustomBottomSheet(context);
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: const Color.fromARGB(0, 255, 255, 255),
-                            onPrimary: Color.fromRGBO(255, 255, 255, 1),
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide.none,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            padding: EdgeInsets.all(16.0),
-                          ),
-                          child: Text(
-                            "Forget Password?",
-                            style: TextStyle(
-                              color: Color.fromRGBO(0, 1, 51, 1.000),
-                              fontWeight: FontWeight.bold,
-                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: screenHeight * 0.0001,
-                      ),
-                      Container(
-                        height: 100, // Increase the height to your desired size
-                        margin: EdgeInsets.symmetric(horizontal: 50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: Center(
+                        Center(
                           child: ElevatedButton(
                             onPressed: () {
-                              if (username.text == "admin" &&
-                                  password.text == "admin") {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Bottom()));
-                              }
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SignIn()));
                             },
                             style: ElevatedButton.styleFrom(
                               primary: Color.fromRGBO(0, 1, 51, 1.000),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
                             ),
                             child: Container(
                               height: 50,
@@ -222,7 +258,7 @@ class Homepage extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "Login",
+                                    "Singup",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -233,84 +269,55 @@ class Homepage extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ),
-                      Center(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SignIn()));
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Color.fromRGBO(0, 1, 51, 1.000),
-                          ),
-                          child: Container(
-                            height: 50,
-                            width: 90,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Singup",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                        SizedBox(
+                          height: screenHeight * 0.04,
                         ),
-                      ),
-                      SizedBox(
-                        height: screenHeight * 0.04,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CircleAvatar(
-                                  radius: 25,
-                                  backgroundColor:
-                                      Color.fromRGBO(0, 1, 51, 1.000),
-                                  child: Icon(Icons.facebook,
-                                      size: 30, color: Colors.white),
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                CircleAvatar(
-                                  radius: 25,
-                                  backgroundColor:
-                                      Color.fromRGBO(0, 1, 51, 1.000),
-                                  child: Icon(Icons.mail,
-                                      size: 30, color: Colors.white),
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                CircleAvatar(
-                                  radius: 25,
-                                  backgroundColor:
-                                      Color.fromRGBO(0, 1, 51, 1.000),
-                                  child: Icon(Icons.security_outlined,
-                                      size: 30, color: Colors.white),
-                                ),
-                              ],
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundColor:
+                                        Color.fromRGBO(0, 1, 51, 1.000),
+                                    child: Icon(Icons.facebook,
+                                        size: 30, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundColor:
+                                        Color.fromRGBO(0, 1, 51, 1.000),
+                                    child: Icon(Icons.mail,
+                                        size: 30, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundColor:
+                                        Color.fromRGBO(0, 1, 51, 1.000),
+                                    child: Icon(Icons.security_outlined,
+                                        size: 30, color: Colors.white),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
