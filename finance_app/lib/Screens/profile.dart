@@ -1,3 +1,6 @@
+import 'dart:js';
+
+import 'package:finance_app/Screens/login.dart';
 import 'package:finance_app/main.dart';
 import 'package:flutter/material.dart';
 
@@ -29,10 +32,13 @@ class Profile extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  radius: 70,
-                  backgroundColor: Color.fromARGB(255, 4, 50, 47),
-                  backgroundImage: AssetImage('1.jpg'),
+                ClipOval(
+                  child: Container(
+                      width: 120,
+                      height: 120,
+                      child: Image.network('images/Profile.png')),
+                  // radius: 60,
+                  // backgroundImage: AssetImage('images/Profile.png'),
                 ),
                 SizedBox(width: 10),
                 Column(
@@ -63,190 +69,42 @@ class Profile extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: const Column(
-              children: [
-                Row(
-                  children: [
-                    Icon(Icons.person,
-                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Text('R.M.C.V',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(0, 1, 51, 1.000),
-                        )),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.email,
-                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Text('google@gmail.com',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(0, 1, 51, 1.000),
-                        )),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.call,
-                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Text('055-2228103',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(0, 1, 51, 1.000),
-                        )),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.lock_clock,
-                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Text('18-05-2024',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(0, 1, 51, 1.000),
-                        )),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.sensor_occupied_sharp,
-                        color: Color.fromRGBO(0, 1, 51, 1.000), size: 30),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Text('Student',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(0, 1, 51, 1.000),
-                        )),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Column(),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.fromRGBO(0, 1, 51, 1.000),
-                      Color.fromRGBO(18, 96, 205, 1),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                width: 120,
-                height: 50,
-                child: TextButton(
-                  onPressed: () {
-                    MaterialPageRoute(builder: (context) => MyApp());
-                  },
-                  child: Text('Logout',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold)),
+          ...List.generate(listTiles.length, (index) {
+            final tile = listTiles[index];
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              child: Card(
+                elevation: 4,
+                shadowColor: Colors.black,
+                child: ListTile(
+                  leading: Icon(tile.icon),
+                  title: Text(tile.title),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: onTapFunctions[index](),
                 ),
               ),
-              SizedBox(width: 20),
-              Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.fromRGBO(0, 1, 51, 1.000),
-                      Color.fromRGBO(18, 96, 205, 1),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                width: 120,
-                height: 50,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text('Settings',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold)),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 30),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: Color.fromRGBO(0, 1, 51, 1.000),
-                  child: Icon(Icons.facebook, size: 30, color: Colors.white),
-                ),
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: Color.fromRGBO(0, 1, 51, 1.000),
-                  child: Icon(Icons.mail, size: 30, color: Colors.white),
-                ),
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: Color.fromRGBO(0, 1, 51, 1.000),
-                  child: Icon(Icons.phone, size: 30, color: Colors.white),
-                ),
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: Color.fromRGBO(0, 1, 51, 1.000),
-                  child: Icon(Icons.message, size: 30, color: Colors.white),
-                ),
-              ],
-            ),
-          ),
+            );
+          })
         ],
       ),
     );
   }
 }
+
+class CustomListTiles {
+  final IconData icon;
+  final String title;
+  CustomListTiles({required this.icon, required this.title});
+}
+
+List<CustomListTiles> listTiles = [
+  CustomListTiles(icon: Icons.person, title: 'Profile'),
+  CustomListTiles(icon: Icons.settings, title: 'Settings'),
+  CustomListTiles(icon: Icons.logout, title: 'Logout'),
+];
+
+final List<Function()> onTapFunctions = [
+  () => print('Profile'),
+  () => print('Settings'),
+  () => print('Logout'),
+];

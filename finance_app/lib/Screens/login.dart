@@ -37,7 +37,10 @@ class Homepage extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     "Login",
-                    style: TextStyle(color: Colors.white, fontSize: 40),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
@@ -196,7 +199,8 @@ class Homepage extends StatelessWidget {
                                     "Login",
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontWeight: FontWeight.bold,
+                                      // fontWeight: FontWeight.bold,
+                                      fontSize: 20,
                                     ),
                                   ),
                                 ],
@@ -226,7 +230,8 @@ class Homepage extends StatelessWidget {
                                   "Singup",
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                    // fontWeight: FontWeight.bold,
+                                    fontSize: 20,
                                   ),
                                 ),
                               ],
