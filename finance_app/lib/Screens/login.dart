@@ -2,9 +2,38 @@ import 'package:finance_app/Screens/signIn.dart';
 import 'package:finance_app/widgets/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
   final TextEditingController username = TextEditingController();
+
   final TextEditingController password = TextEditingController();
+
+  String? emailError;
+
+  String? passwordError;
+
+  String? _validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your email';
+    } else if (!RegExp(r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$')
+        .hasMatch(value)) {
+      return 'Please enter a valid email address';
+    }
+    return null;
+  }
+
+  String? _validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your password';
+    } else if (value.length < 6) {
+      return 'Password must be at least 6 characters';
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +115,13 @@ class Homepage extends StatelessWidget {
                             Container(
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(),
-                              child: TextField(
+                              child: TextFormField(
+                                validator: (value) {
+                                  setState(() {
+                                    emailError = _validateEmail(value);
+                                  });
+                                  return null;
+                                },
                                 keyboardType: TextInputType.emailAddress,
                                 controller: username,
                                 decoration: InputDecoration(
@@ -111,7 +146,13 @@ class Homepage extends StatelessWidget {
                             Container(
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(),
-                              child: TextField(
+                              child: TextFormField(
+                                validator: (value) {
+                                  setState(() {
+                                    passwordError = _validatePassword(value);
+                                  });
+                                  return null;
+                                },
                                 obscureText: true,
                                 keyboardType: TextInputType.text,
                                 controller: password,
@@ -175,12 +216,20 @@ class Homepage extends StatelessWidget {
                         child: Center(
                           child: ElevatedButton(
                             onPressed: () {
-                              if (username.text == "admin" &&
-                                  password.text == "admin") {
-                                Navigator.pushReplacement(
+                              setState(() {
+                                emailError = _validateEmail(username.text);
+                                passwordError =
+                                    _validatePassword(password.text);
+                              });
+                              if (emailError == null && passwordError == null) {
+                                if (username.text == "admin" &&
+                                    password.text == "admin") {
+                                  Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Bottom()));
+                                        builder: (context) => Bottom()),
+                                  );
+                                }
                               }
                             },
                             style: ElevatedButton.styleFrom(
