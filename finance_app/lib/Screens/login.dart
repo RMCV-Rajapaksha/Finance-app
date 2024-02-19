@@ -216,11 +216,9 @@ class _HomepageState extends State<Homepage> {
                         child: Center(
                           child: ElevatedButton(
                             onPressed: () {
-                              setState(() {
-                                emailError = _validateEmail(username.text);
-                                passwordError =
-                                    _validatePassword(password.text);
-                              });
+                              emailError = _validateEmail(username.text);
+                              passwordError = _validatePassword(password.text);
+
                               if (emailError == null && passwordError == null) {
                                 if (username.text == "admin" &&
                                     password.text == "admin") {
