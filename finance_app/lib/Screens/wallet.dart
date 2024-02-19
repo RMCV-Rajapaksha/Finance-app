@@ -82,7 +82,7 @@ class _HomePageState extends State<Wallet> {
                                   vertical: myHeight * 0.005),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
-                                  color: Colors.white.withOpacity(0.5)),
+                                  color: Colors.transparent),
                               child: Center(
                                   child: Text(
                                 '02/26',

@@ -61,6 +61,14 @@ class _Add_ScreenState extends State<Add_Screen> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(0, 1, 51, 1.000),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(0, 3), // changes position of shadow
+          ),
+        ],
       ),
       height: 550,
       width: 340,
@@ -95,12 +103,7 @@ class _Add_ScreenState extends State<Add_Screen> {
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromRGBO(0, 1, 51, 1.000),
-              Color.fromRGBO(18, 96, 205, 1),
-            ],
-          ),
+          color: Color.fromRGBO(0, 1, 51, 1.000),
           borderRadius: BorderRadius.circular(15),
         ),
         width: 120,
@@ -220,7 +223,8 @@ class _Add_ScreenState extends State<Add_Screen> {
               borderSide: BorderSide(width: 2, color: Color(0xffC5C5C5))),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(width: 2, color: Color(0xff368983))),
+              borderSide:
+                  BorderSide(width: 2, color: Color.fromRGBO(0, 1, 51, 1.000))),
         ),
       ),
     );
@@ -241,7 +245,8 @@ class _Add_ScreenState extends State<Add_Screen> {
               borderSide: BorderSide(width: 2, color: Color(0xffC5C5C5))),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(width: 2, color: Color(0xff368983))),
+              borderSide:
+                  BorderSide(width: 2, color: Color.fromRGBO(0, 1, 51, 1.000))),
         ),
       ),
     );

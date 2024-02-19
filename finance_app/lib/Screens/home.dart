@@ -140,8 +140,8 @@ class _HomeState extends State<Home> {
               child: Stack(
                 children: [
                   Positioned(
-                    top: 35,
-                    left: 340,
+                    top: 60,
+                    left: 320,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(7),
                       child: Container(

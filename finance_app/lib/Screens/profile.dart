@@ -106,5 +106,5 @@ List<CustomListTiles> listTiles = [
 final List<Function()> onTapFunctions = [
   () => print('Profile'),
   () => print('Settings'),
-  () => print('Logout'),
+  () => print('login'),
 ];
