@@ -87,7 +87,7 @@ class Homepage extends StatelessWidget {
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(),
                               child: TextField(
-                                keyboardType: TextInputType.number,
+                                keyboardType: TextInputType.emailAddress,
                                 controller: username,
                                 decoration: InputDecoration(
                                   contentPadding: EdgeInsets.symmetric(
@@ -379,18 +379,12 @@ void showCustomBottomSheet(BuildContext context) {
                 Container(
                   height: 50,
                   width: 50,
-                  child: ElevatedButton(
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    color: Color.fromRGBO(0, 1, 51, 1.000),
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(
-                          0, 1, 51, 1.000), // Set your desired button color
-                    ),
-                    child: Icon(
-                      Icons.arrow_back_outlined,
-                      color: Colors.white,
-                    ),
                   ),
                 ),
               ],
