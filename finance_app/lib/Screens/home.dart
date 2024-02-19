@@ -7,7 +7,7 @@ import 'package:finance_app/data/utlity.dart';
 import 'package:device_preview/device_preview.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -27,6 +27,9 @@ class _HomeState extends State<Home> {
   ];
   @override
   Widget build(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    double screenWidth = mediaQueryData.size.width;
+    double screenHeight = mediaQueryData.size.height;
     return Scaffold(
         body: ValueListenableBuilder(
             valueListenable: box.listenable(),
@@ -34,7 +37,8 @@ class _HomeState extends State<Home> {
               return CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
-                    child: SizedBox(height: 340, child: _head()),
+                    child: SizedBox(
+                        height: 340, child: _head(screenWidth, screenHeight)),
                   ),
                   SliverToBoxAdapter(
                     child: Padding(
@@ -115,7 +119,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget _head() {
+  Widget _head(double screenWidth, double screenHeight) {
     return Stack(
       children: [
         Column(
@@ -186,8 +190,8 @@ class _HomeState extends State<Home> {
           ],
         ),
         Positioned(
-          top: 140,
-          left: 37,
+          top: screenHeight * 0.16,
+          left: screenWidth * 0.09,
           child: Container(
             height: 170,
             width: 320,
