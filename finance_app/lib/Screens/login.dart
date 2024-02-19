@@ -220,8 +220,8 @@ class _HomepageState extends State<Homepage> {
                               passwordError = _validatePassword(password.text);
 
                               if (emailError == null && passwordError == null) {
-                                if (username.text == "admin" &&
-                                    password.text == "admin") {
+                                if (username.text == "admin@gmail.com" &&
+                                    password.text == "admin1234") {
                                   Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
