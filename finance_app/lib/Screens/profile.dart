@@ -99,12 +99,16 @@ class CustomListTiles {
 
 List<CustomListTiles> listTiles = [
   CustomListTiles(icon: Icons.person, title: 'Profile'),
+  CustomListTiles(icon: Icons.credit_card, title: 'Payment Methods'),
   CustomListTiles(icon: Icons.settings, title: 'Settings'),
+  CustomListTiles(icon: Icons.info_outline_rounded, title: 'About Us'),
   CustomListTiles(icon: Icons.logout, title: 'Logout'),
 ];
 
 final List<Function()> onTapFunctions = [
   () => print('Profile'),
+  () => print('Payment Methods'),
   () => print('Settings'),
-  () => print('login'),
+  () => print('About'),
+  () => print('logout'),
 ];
